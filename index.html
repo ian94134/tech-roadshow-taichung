@@ -19,83 +19,98 @@
 body{margin:0;background:#FFFFFF}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:84px}
 a{color:#014CFF}a:hover{color:#0A1342}
 .btn{transition:transform .15s ease, box-shadow .15s ease}
 .btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(1,76,255,.28)}
 a:focus-visible{outline:3px solid #00AAFF;outline-offset:3px}
 .navlink:hover{text-decoration:underline;text-underline-offset:6px}
+.mobile-bar{display:none}
+@media (max-width: 767px){
+.site-header{position:static !important}
+.nav-links{flex-wrap:nowrap !important;overflow-x:auto;width:100%;justify-content:space-between;gap:4px !important;scrollbar-width:none}
+.navlink{font-size:14px !important}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-cta{display:none !important}
+.mobile-bar{display:flex}
+.page-end{padding-bottom:112px !important}
+section[id]{scroll-margin-top:12px}
+}
 </style>
 </head>
 <body>
 <div id="top" style="font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif; color: #0A1342; background: #FFFFFF; min-height: 100%">
 
-<!-- ========== 導覽列 ========== -->
-<header style="background: #FFFFFF; border-bottom: 1px solid #E3ECF7">
-<div style="max-width: 1200px; margin: 0 auto; padding: 14px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
-<a href="#top" style="display: block; flex: 0 1 420px; min-width: 0; padding: 6px 0; text-decoration: none">
+<!-- ========== 導覽列（桌機固定於頂端） ========== -->
+<header class="site-header" style="position: sticky; top: 0; z-index: 40; background: rgba(255, 255, 255, 0.94); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid #E3ECF7">
+<div style="max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 32px">
+<a href="#top" style="display: block; flex: 0 1 360px; min-width: 0; padding: 6px 0; text-decoration: none">
 <img src="logo.png" alt="技術落地 產業共創｜法人技術巡展" style="display: block; width: 100%; height: auto">
 </a>
-<nav aria-label="頁面導覽" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 26px">
-<a class="navlink" href="#about" style="font-size: 15px; font-weight: 500; color: #0A1342; text-decoration: none; padding: 10px 0">活動簡介</a>
-<a class="navlink" href="#agenda" style="font-size: 15px; font-weight: 500; color: #0A1342; text-decoration: none; padding: 10px 0">活動議程</a>
-<a class="navlink" href="#exhibit" style="font-size: 15px; font-weight: 500; color: #0A1342; text-decoration: none; padding: 10px 0">展示技術</a>
-<a class="navlink" href="#register" style="font-size: 15px; font-weight: 500; color: #0A1342; text-decoration: none; padding: 10px 0">報名資訊</a>
-<a class="navlink" href="#venue" style="font-size: 15px; font-weight: 500; color: #0A1342; text-decoration: none; padding: 10px 0">交通資訊</a>
-<a class="btn" href="https://itricollege.surveycake.biz/s/6RV8O" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 22px; border-radius: 999px; background: #014CFF; color: #FFFFFF; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-decoration: none">立即報名</a>
+<nav class="nav-links" aria-label="頁面導覽" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 26px">
+<a class="navlink" href="#about" style="flex: 0 0 auto; font-size: 15px; font-weight: 500; color: #0A1342; text-decoration: none; padding: 10px 0">活動簡介</a>
+<a class="navlink" href="#agenda" style="flex: 0 0 auto; font-size: 15px; font-weight: 500; color: #0A1342; text-decoration: none; padding: 10px 0">活動議程</a>
+<a class="navlink" href="#exhibit" style="flex: 0 0 auto; font-size: 15px; font-weight: 500; color: #0A1342; text-decoration: none; padding: 10px 0">展示技術</a>
+<a class="navlink" href="#register" style="flex: 0 0 auto; font-size: 15px; font-weight: 500; color: #0A1342; text-decoration: none; padding: 10px 0">報名資訊</a>
+<a class="navlink" href="#venue" style="flex: 0 0 auto; font-size: 15px; font-weight: 500; color: #0A1342; text-decoration: none; padding: 10px 0">活動地點</a>
+<a class="btn nav-cta" href="https://itricollege.surveycake.biz/s/6RV8O" target="_blank" rel="noopener" style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 22px; border-radius: 999px; background: #014CFF; color: #FFFFFF; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-decoration: none">立即報名</a>
 </nav>
 </div>
 </header>
 
-<!-- ========== 主視覺 ========== -->
-<section aria-label="活動主視覺" style="background: #EAF6FE">
-<img src="kv.jpg" alt="智慧韌性 × 科技賦能｜機器人與無人載具產業技術發展與應用（技術落地・產業共創｜法人技術巡展）" style="display: block; width: 100%; max-width: 1680px; height: auto; margin: 0 auto">
-</section>
+<!-- ========== 主視覺 + 活動資訊 ========== -->
+<section style="background: #EEF6FD; padding: clamp(12px, 2.5vw, 32px) clamp(12px, 2vw, 20px) clamp(48px, 6vw, 80px)">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(28px, 4vw, 48px)">
+<img src="kv.jpg" alt="智慧韌性 × 科技賦能｜機器人與無人載具產業技術發展與應用（技術落地 產業共創｜法人技術巡展）" style="display: block; width: 100%; height: auto; border-radius: clamp(10px, 1.6vw, 20px); box-shadow: 0 28px 60px -28px rgba(1, 76, 255, 0.45)">
+<div style="display: flex; flex-wrap: wrap; align-items: stretch; gap: 28px 48px; padding: 0 clamp(4px, 1vw, 8px)">
 
-<!-- ========== 活動資訊卡 ========== -->
-<section style="padding: 0 20px">
-<div style="position: relative; max-width: 1200px; margin: -6% auto 0; background: #FFFFFF; border-radius: 24px; box-shadow: 0 24px 64px rgba(10, 19, 66, 0.14); padding: clamp(24px, 4vw, 48px); display: flex; flex-direction: column; gap: 28px">
-<div style="display: flex; flex-direction: column; gap: 12px">
-<span style="font-size: 14px; font-weight: 700; color: #0077C8; letter-spacing: 0.16em">技術落地・產業共創｜法人技術巡展</span>
-<h1 style="margin: 0; font-size: clamp(28px, 3.4vw, 46px); font-weight: 900; line-height: 1.25; letter-spacing: 0.02em; color: #0A1342">機器人與無人載具產業發展趨勢交流會</h1>
-<p style="margin: 0; font-size: clamp(17px, 1.7vw, 22px); font-weight: 700; line-height: 1.5; color: #0077C8; letter-spacing: 0.04em">智慧韌性 × 科技賦能｜機器人與無人載具產業技術發展與應用</p>
+<div style="flex: 1.7 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="display: inline-flex; align-items: center; padding: 6px 14px; border-radius: 999px; background: #0A1342; color: #FFFFFF; font-size: 14px; font-weight: 700; letter-spacing: 0.12em">法人技術巡展</span>
+<span style="display: inline-flex; align-items: center; padding: 6px 14px; border-radius: 999px; background: #D9F7E7; color: #0A6B45; font-size: 14px; font-weight: 700; letter-spacing: 0.12em">免費參加</span>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 14px">
-<div style="flex: 1 1 220px; display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; background: #F2F8FE; border-radius: 16px">
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#014CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto; margin-top: 2px"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span style="font-size: 14px; color: #4A5578; letter-spacing: 0.08em">活動日期</span>
-<span style="font-family: 'Outfit', 'Noto Sans TC', sans-serif; font-size: 20px; font-weight: 700; color: #0A1342">2026.12.07（一）</span>
-</div>
-</div>
-<div style="flex: 1 1 220px; display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; background: #F2F8FE; border-radius: 16px">
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#014CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span style="font-size: 14px; color: #4A5578; letter-spacing: 0.08em">活動時間</span>
-<span style="font-family: 'Outfit', 'Noto Sans TC', sans-serif; font-size: 20px; font-weight: 700; color: #0A1342">13:00–17:00</span>
+<h1 style="margin: 0; font-size: clamp(30px, 3.3vw, 46px); font-weight: 900; line-height: 1.28; letter-spacing: 0.02em; color: #0A1342"><span style="display: inline-block; white-space: nowrap">機器人與無人載具</span><span style="display: inline-block; white-space: nowrap">產業發展趨勢交流會</span></h1>
+<p style="margin: 0; font-size: clamp(17px, 1.6vw, 20px); font-weight: 700; line-height: 1.6; color: #0077C8; letter-spacing: 0.04em">智慧韌性 × 科技賦能｜機器人與無人載具產業技術發展與應用</p>
+<div style="display: flex; flex-direction: column; gap: 16px; margin-top: 4px">
+<div style="display: flex; gap: 14px; align-items: flex-start">
+<span style="flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 12px; background: #FFFFFF; border: 1px solid #DCE8F5"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#014CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 2px; padding-top: 1px">
+<span style="font-family: 'Outfit', 'Noto Sans TC', sans-serif; font-size: 19px; font-weight: 700; color: #0A1342">2026.12.07（一）13:00–17:00</span>
 <span style="font-size: 14px; color: #4A5578">13:00 起開放報到</span>
 </div>
 </div>
-<div style="flex: 1 1 220px; display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; background: #F2F8FE; border-radius: 16px">
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#014CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto; margin-top: 2px"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span style="font-size: 14px; color: #4A5578; letter-spacing: 0.08em">活動地點</span>
+<div style="display: flex; gap: 14px; align-items: flex-start">
+<span style="flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 12px; background: #FFFFFF; border: 1px solid #DCE8F5"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#014CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
+<div style="display: flex; flex-direction: column; gap: 2px; padding-top: 1px">
 <span style="font-size: 18px; font-weight: 700; color: #0A1342">台中市裕元花園酒店</span>
 <span style="font-size: 14px; color: #4A5578">台中市西屯區台灣大道四段610號</span>
 </div>
 </div>
-<div style="flex: 1 1 220px; display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; background: #F2F8FE; border-radius: 16px">
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#014CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto; margin-top: 2px"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M16 14.5a5 5 0 0 1 5.5 5"></path></svg>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span style="font-size: 14px; color: #4A5578; letter-spacing: 0.08em">參加費用</span>
-<span style="font-size: 18px; font-weight: 700; color: #0A1342">免費參加</span>
-<span style="font-size: 14px; color: #4A5578">每家企業限額 2 名</span>
+<div style="display: flex; gap: 14px; align-items: flex-start">
+<span style="flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 12px; background: #FFFFFF; border: 1px solid #DCE8F5"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#014CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13"></path><path d="M9 21v-6h6v6M4 21h16"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 2px; padding-top: 1px">
+<span style="font-size: 18px; font-weight: 700; color: #0A1342">台灣智慧自動化與機器人協會 × KPMG安侯建業</span>
+<span style="font-size: 14px; color: #4A5578">共同主辦｜受邀單位：工研院、金屬中心</span>
 </div>
 </div>
 </div>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px">
-<a class="btn" href="https://itricollege.surveycake.biz/s/6RV8O" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 30px; border-radius: 999px; background: #014CFF; color: #FFFFFF; font-size: 17px; font-weight: 700; letter-spacing: 0.1em; text-decoration: none">立即報名<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-<a href="#agenda" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 28px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #014CFF; color: #014CFF; font-size: 17px; font-weight: 700; letter-spacing: 0.1em; text-decoration: none">查看議程</a>
-<span style="font-size: 14px; color: #4A5578; line-height: 1.6">報名截止：<strong style="color: #0A1342">2026年12月2日（三）</strong>止或額滿為止</span>
+</div>
+
+<aside aria-label="報名摘要" style="flex: 1 1 320px; min-width: 0; align-self: flex-start; display: flex; flex-direction: column; gap: 4px; background: #FFFFFF; border: 1px solid #DCE8F5; border-radius: 20px; box-shadow: 0 24px 56px -28px rgba(10, 19, 66, 0.3); padding: clamp(22px, 2.4vw, 30px)">
+<span style="font-size: 14px; font-weight: 700; letter-spacing: 0.12em; color: #0077C8">線上報名</span>
+<span style="font-size: 30px; font-weight: 900; color: #0A1342; letter-spacing: 0.04em; margin-bottom: 8px">免費參加</span>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; padding: 14px 0; border-top: 1px solid #E3ECF7">
+<span style="font-size: 15px; color: #4A5578">參加名額</span>
+<span style="font-size: 16px; font-weight: 700; color: #0A1342">每家企業限額 2 名</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; padding: 14px 0; border-top: 1px solid #E3ECF7; border-bottom: 1px solid #E3ECF7">
+<span style="font-size: 15px; color: #4A5578">報名截止</span>
+<span style="font-size: 16px; font-weight: 700; color: #0A1342">12/2（三）或額滿為止</span>
+</div>
+<a class="btn" href="https://itricollege.surveycake.biz/s/6RV8O" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; margin-top: 18px; border-radius: 999px; background: #014CFF; color: #FFFFFF; font-size: 18px; font-weight: 700; letter-spacing: 0.12em; text-decoration: none">立即報名<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%E6%A9%9F%E5%99%A8%E4%BA%BA%E8%88%87%E7%84%A1%E4%BA%BA%E8%BC%89%E5%85%B7%E7%94%A2%E6%A5%AD%E7%99%BC%E5%B1%95%E8%B6%A8%E5%8B%A2%E4%BA%A4%E6%B5%81%E6%9C%83&amp;dates=20261207T050000Z%2F20261207T090000Z&amp;location=%E5%8F%B0%E4%B8%AD%E5%B8%82%E8%A3%95%E5%85%83%E8%8A%B1%E5%9C%92%E9%85%92%E5%BA%97%EF%BC%88%E5%8F%B0%E4%B8%AD%E5%B8%82%E8%A5%BF%E5%B1%AF%E5%8D%80%E5%8F%B0%E7%81%A3%E5%A4%A7%E9%81%93%E5%9B%9B%E6%AE%B5610%E8%99%9F%EF%BC%89&amp;details=%E5%A0%B1%E5%90%8D%E8%A1%A8%E5%96%AE%EF%BC%9Ahttps%3A%2F%2Fitricollege.surveycake.biz%2Fs%2F6RV8O" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; margin-top: 8px; border-radius: 999px; border: 1.5px solid #CFE0F5; color: #0A1342; font-size: 15px; font-weight: 700; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#014CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"></path></svg>加入 Google 行事曆</a>
+</aside>
+
 </div>
 </div>
 </section>
@@ -105,7 +120,7 @@ a:focus-visible{outline:3px solid #00AAFF;outline-offset:3px}
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px 64px">
 <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.28em; color: #0077C8">ABOUT</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.28em; color: #0077C8"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1C12.7 8 16 11.3 23 12C16 12.7 12.7 16 12 23C11.3 16 8 12.7 1 12C8 11.3 11.3 8 12 1Z" fill="#00AAFF"></path></svg>ABOUT</span>
 <h2 style="margin: 0; font-size: clamp(28px, 3vw, 40px); font-weight: 900; letter-spacing: 0.04em; color: #0A1342">活動簡介</h2>
 </div>
 <p style="flex: 999 1 520px; max-width: 680px; margin: 0; font-size: 18px; line-height: 1.9; color: #33405F">當前機器人與無人載具的技術發展，正為企業帶來新應用與轉型機會。本次交流會由社團法人台灣智慧自動化與機器人協會與KPMG安侯建業共同主辦，匯集工研院與KPMG專家團隊，分享產業趨勢、技術落地案例及企業發展契機，並邀請金屬工業研究發展中心聯合參與展位技術交流，促進企業與專家面對面互動。誠摯邀請產業夥伴參與，掌握市場動向，交流實務經驗，探索技術導入與跨域合作的無限可能。</p>
@@ -114,7 +129,7 @@ a:focus-visible{outline:3px solid #00AAFF;outline-offset:3px}
 <h3 style="margin: 0; font-size: 20px; font-weight: 900; letter-spacing: 0.06em; color: #0A1342">活動亮點</h3>
 <div style="display: flex; flex-wrap: wrap; gap: 24px">
 <div style="flex: 1 1 300px; display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #DCE8F5; border-radius: 20px; overflow: hidden">
-<img src="tile-dots.jpg" alt="" style="display: block; width: 100%; height: 150px; object-fit: cover">
+<img src="tile-dots.jpg" alt="" style="display: block; width: 100%; height: 140px; object-fit: cover">
 <div style="padding: 24px 28px 30px; display: flex; flex-direction: column; gap: 10px">
 <span style="font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 800; color: #014CFF; letter-spacing: 0.1em">01</span>
 <h4 style="margin: 0; font-size: 21px; font-weight: 900; color: #0A1342">產業趨勢專題演講</h4>
@@ -122,7 +137,7 @@ a:focus-visible{outline:3px solid #00AAFF;outline-offset:3px}
 </div>
 </div>
 <div style="flex: 1 1 300px; display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #DCE8F5; border-radius: 20px; overflow: hidden">
-<img src="tile-circle.jpg" alt="" style="display: block; width: 100%; height: 150px; object-fit: cover">
+<img src="tile-circle.jpg" alt="" style="display: block; width: 100%; height: 140px; object-fit: cover">
 <div style="padding: 24px 28px 30px; display: flex; flex-direction: column; gap: 10px">
 <span style="font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 800; color: #014CFF; letter-spacing: 0.1em">02</span>
 <h4 style="margin: 0; font-size: 21px; font-weight: 900; color: #0A1342">機器人與無人載具應用分享</h4>
@@ -130,7 +145,7 @@ a:focus-visible{outline:3px solid #00AAFF;outline-offset:3px}
 </div>
 </div>
 <div style="flex: 1 1 300px; display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #DCE8F5; border-radius: 20px; overflow: hidden">
-<img src="tile-triangle.jpg" alt="" style="display: block; width: 100%; height: 150px; object-fit: cover">
+<img src="tile-triangle.jpg" alt="" style="display: block; width: 100%; height: 140px; object-fit: cover">
 <div style="padding: 24px 28px 30px; display: flex; flex-direction: column; gap: 10px">
 <span style="font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 800; color: #014CFF; letter-spacing: 0.1em">03</span>
 <h4 style="margin: 0; font-size: 21px; font-weight: 900; color: #0A1342">展位技術交流</h4>
@@ -147,7 +162,7 @@ a:focus-visible{outline:3px solid #00AAFF;outline-offset:3px}
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px">
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px">
 <div style="display: flex; flex-direction: column; gap: 10px">
-<span style="font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.28em; color: #0077C8">AGENDA</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.28em; color: #0077C8"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1C12.7 8 16 11.3 23 12C16 12.7 12.7 16 12 23C11.3 16 8 12.7 1 12C8 11.3 11.3 8 12 1Z" fill="#00AAFF"></path></svg>AGENDA</span>
 <h2 style="margin: 0; font-size: clamp(28px, 3vw, 40px); font-weight: 900; letter-spacing: 0.04em; color: #0A1342">活動議程</h2>
 </div>
 <span style="display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; padding: 10px 18px; border-radius: 14px; line-height: 1.5; background: #FFFFFF; border: 1px solid #DCE8F5; font-family: 'Outfit', 'Noto Sans TC', sans-serif; font-size: 16px; font-weight: 600; color: #0A1342"><span style="white-space: nowrap">2026.12.07（一）13:00–17:00</span><span style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#014CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>台中市裕元花園酒店</span></span>
@@ -156,9 +171,7 @@ a:focus-visible{outline:3px solid #00AAFF;outline-offset:3px}
 
 <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px 32px; padding: 22px 28px">
 <div style="flex: 0 0 140px; font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; color: #014CFF; padding-top: 2px">13:00 起</div>
-<div style="flex: 999 1 340px; min-width: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
-<span style="font-size: 17px; font-weight: 500; line-height: 1.5; color: #0A1342">報到</span>
-</div>
+<div style="flex: 999 1 340px; min-width: 0; font-size: 17px; font-weight: 500; line-height: 1.5; color: #0A1342">報到</div>
 <div style="flex: 1 1 260px; min-width: 0"></div>
 </div>
 
@@ -190,6 +203,11 @@ a:focus-visible{outline:3px solid #00AAFF;outline-offset:3px}
 <span style="font-size: 17px; font-weight: 500; line-height: 1.5; color: #0A1342">全體合影</span>
 </div>
 <div style="flex: 1 1 260px; min-width: 0; font-size: 15px; line-height: 1.6; color: #4A5578">全體參與者</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 14px 28px; border-top: 1px solid #DCE8F5; background: #EAF1FF">
+<span style="font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 0.18em; color: #0B3FD1">PART 1</span>
+<span style="font-size: 16px; font-weight: 900; letter-spacing: 0.06em; color: #0A1342">產業趨勢專題演講</span>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 10px 32px; padding: 26px 28px; border-top: 1px solid #E3ECF7">
@@ -237,6 +255,11 @@ a:focus-visible{outline:3px solid #00AAFF;outline-offset:3px}
 <div style="flex: 1 1 260px; min-width: 0; font-size: 15px; line-height: 1.6; color: #4A5578">KPMG安侯建業、工研院、金屬中心</div>
 </div>
 
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 14px 28px; border-top: 1px solid #DCE8F5; background: #E6F8EF">
+<span style="font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 0.18em; color: #0A6B45">PART 2</span>
+<span style="font-size: 16px; font-weight: 900; letter-spacing: 0.06em; color: #0A1342">技術落地應用分享</span>
+</div>
+
 <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 10px 32px; padding: 26px 28px; border-top: 1px solid #E3ECF7">
 <div style="flex: 0 0 140px; font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; color: #014CFF; padding-top: 2px">15:15–15:45</div>
 <div style="flex: 999 1 340px; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 8px">
@@ -276,50 +299,62 @@ a:focus-visible{outline:3px solid #00AAFF;outline-offset:3px}
 </section>
 
 <!-- ========== 展示技術 ========== -->
-<section id="exhibit" style="background: #0A1342; padding: clamp(64px, 8vw, 112px) 20px">
+<section id="exhibit" style="background: #FFFFFF; padding: clamp(64px, 8vw, 112px) 20px">
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px 48px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 48px">
 <div style="flex: 999 1 420px; display: flex; flex-direction: column; gap: 14px">
-<span style="font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.28em; color: #79FAF6">EXHIBITION</span>
-<h2 style="margin: 0; font-size: clamp(28px, 3vw, 40px); font-weight: 900; letter-spacing: 0.04em; color: #FFFFFF">展示技術</h2>
-<p style="margin: 0; max-width: 620px; font-size: 16px; line-height: 1.9; color: #C9D3F2">活動期間設有展位技術交流，歡迎與 KPMG 安侯建業、工研院及金屬中心專家面對面，交流技術導入與跨域合作的可能。</p>
-<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px">
-<span style="padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(121, 250, 246, 0.4); font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600; color: #79FAF6">13:00–13:30</span>
-<span style="padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(121, 250, 246, 0.4); font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600; color: #79FAF6">14:45–15:15</span>
-<span style="padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(121, 250, 246, 0.4); font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600; color: #79FAF6">16:15–17:00</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.28em; color: #0077C8"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1C12.7 8 16 11.3 23 12C16 12.7 12.7 16 12 23C11.3 16 8 12.7 1 12C8 11.3 11.3 8 12 1Z" fill="#00AAFF"></path></svg>EXHIBITION</span>
+<h2 style="margin: 0; font-size: clamp(28px, 3vw, 40px); font-weight: 900; letter-spacing: 0.04em; color: #0A1342">展示技術</h2>
+<p style="margin: 0; max-width: 620px; font-size: 17px; line-height: 1.9; color: #33405F">活動期間設有展位技術交流，歡迎與 KPMG 安侯建業、工研院及金屬中心專家面對面，交流技術導入與跨域合作的可能。</p>
+</div>
+<div style="flex: 0 1 auto; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; font-weight: 700; letter-spacing: 0.12em; color: #4A5578">展位交流時段</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="padding: 6px 14px; border-radius: 999px; background: #EEF6FD; border: 1px solid #CFE6F8; font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600; color: #00639F">13:00–13:30</span>
+<span style="padding: 6px 14px; border-radius: 999px; background: #EEF6FD; border: 1px solid #CFE6F8; font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600; color: #00639F">14:45–15:15</span>
+<span style="padding: 6px 14px; border-radius: 999px; background: #EEF6FD; border: 1px solid #CFE6F8; font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600; color: #00639F">16:15–17:00</span>
 </div>
 </div>
-<img src="tile-grid.jpg" alt="" style="flex: 0 1 300px; width: 300px; max-width: 100%; height: 200px; object-fit: cover; border-radius: 20px; display: block">
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 20px">
-<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; padding: 28px; background: #142063; border: 1px solid rgba(121, 250, 246, 0.2); border-radius: 20px">
-<span style="font-size: 14px; font-weight: 700; letter-spacing: 0.16em; color: #79FAF6">展位單位</span>
-<h3 style="margin: 0; font-size: 20px; font-weight: 700; line-height: 1.5; color: #FFFFFF">KPMG安侯建業聯合會計師事務所</h3>
-<div style="height: 1px; background: rgba(255, 255, 255, 0.14)"></div>
-<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #AEBBE6">[展示技術項目待公布]</p>
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 28px; background: #FFFFFF; border: 1px solid #DCE8F5; border-radius: 20px">
+<img src="tile-dots.jpg" alt="" style="display: block; width: 56px; height: 56px; object-fit: cover; border-radius: 14px">
+<span style="font-size: 14px; font-weight: 700; letter-spacing: 0.16em; color: #0077C8">展位單位</span>
+<h3 style="margin: 0; font-size: 20px; font-weight: 700; line-height: 1.5; color: #0A1342">KPMG安侯建業聯合會計師事務所</h3>
+<span style="padding: 6px 12px; border-radius: 999px; background: #F2F5FA; color: #4A5578; font-size: 14px; font-weight: 500">展示項目即將公布</span>
 </div>
-<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; padding: 28px; background: #142063; border: 1px solid rgba(121, 250, 246, 0.2); border-radius: 20px">
-<span style="font-size: 14px; font-weight: 700; letter-spacing: 0.16em; color: #79FAF6">展位單位</span>
-<h3 style="margin: 0; font-size: 20px; font-weight: 700; line-height: 1.5; color: #FFFFFF">財團法人工業技術研究院</h3>
-<div style="height: 1px; background: rgba(255, 255, 255, 0.14)"></div>
-<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #AEBBE6">[展示技術項目待公布]</p>
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 28px; background: #FFFFFF; border: 1px solid #DCE8F5; border-radius: 20px">
+<img src="tile-circle.jpg" alt="" style="display: block; width: 56px; height: 56px; object-fit: cover; border-radius: 14px">
+<span style="font-size: 14px; font-weight: 700; letter-spacing: 0.16em; color: #0077C8">展位單位</span>
+<h3 style="margin: 0; font-size: 20px; font-weight: 700; line-height: 1.5; color: #0A1342">財團法人工業技術研究院</h3>
+<span style="padding: 6px 12px; border-radius: 999px; background: #F2F5FA; color: #4A5578; font-size: 14px; font-weight: 500">展示項目即將公布</span>
 </div>
-<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; padding: 28px; background: #142063; border: 1px solid rgba(121, 250, 246, 0.2); border-radius: 20px">
-<span style="font-size: 14px; font-weight: 700; letter-spacing: 0.16em; color: #79FAF6">展位單位</span>
-<h3 style="margin: 0; font-size: 20px; font-weight: 700; line-height: 1.5; color: #FFFFFF">財團法人金屬工業研究發展中心</h3>
-<div style="height: 1px; background: rgba(255, 255, 255, 0.14)"></div>
-<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #AEBBE6">[展示技術項目待公布]</p>
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 28px; background: #FFFFFF; border: 1px solid #DCE8F5; border-radius: 20px">
+<img src="tile-grid.jpg" alt="" style="display: block; width: 56px; height: 56px; object-fit: cover; border-radius: 14px">
+<span style="font-size: 14px; font-weight: 700; letter-spacing: 0.16em; color: #0077C8">展位單位</span>
+<h3 style="margin: 0; font-size: 20px; font-weight: 700; line-height: 1.5; color: #0A1342">財團法人金屬工業研究發展中心</h3>
+<span style="padding: 6px 12px; border-radius: 999px; background: #F2F5FA; color: #4A5578; font-size: 14px; font-weight: 500">展示項目即將公布</span>
 </div>
 </div>
 </div>
 </section>
+
+<!-- ========== 品牌拼貼帶 ========== -->
+<div aria-hidden="true" style="display: flex; height: clamp(64px, 9vw, 140px); overflow: hidden">
+<img src="tile-sphere.jpg" alt="" style="flex: 1 1 0; min-width: 0; height: 100%; object-fit: cover; display: block">
+<img src="tile-dots.jpg" alt="" style="flex: 1 1 0; min-width: 0; height: 100%; object-fit: cover; display: block">
+<img src="tile-triangle.jpg" alt="" style="flex: 1 1 0; min-width: 0; height: 100%; object-fit: cover; display: block">
+<img src="tile-circle.jpg" alt="" style="flex: 1 1 0; min-width: 0; height: 100%; object-fit: cover; display: block">
+<img src="tile-grid.jpg" alt="" style="flex: 1 1 0; min-width: 0; height: 100%; object-fit: cover; display: block">
+<img src="tile-quarter.jpg" alt="" style="flex: 1 1 0; min-width: 0; height: 100%; object-fit: cover; display: block">
+</div>
 
 <!-- ========== 報名資訊 ========== -->
 <section id="register" style="background: #014CFF; padding: clamp(64px, 8vw, 112px) 20px">
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px 64px">
 <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
 <div style="display: flex; flex-direction: column; gap: 14px">
-<span style="font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.28em; color: #79FAF6">REGISTRATION</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.28em; color: #79FAF6"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1C12.7 8 16 11.3 23 12C16 12.7 12.7 16 12 23C11.3 16 8 12.7 1 12C8 11.3 11.3 8 12 1Z" fill="#79FAF6"></path></svg>REGISTRATION</span>
 <h2 style="margin: 0; font-size: clamp(28px, 3vw, 40px); font-weight: 900; letter-spacing: 0.04em; color: #FFFFFF">報名資訊</h2>
 <p style="margin: 0; font-size: 17px; line-height: 1.8; color: #FFFFFF">即日起採線上報名，名額有限，額滿為止。</p>
 </div>
@@ -353,34 +388,32 @@ a:focus-visible{outline:3px solid #00AAFF;outline-offset:3px}
 <a class="btn" href="https://itricollege.surveycake.biz/s/6RV8O" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 32px; border-radius: 999px; background: #FFFFFF; color: #014CFF; font-size: 18px; font-weight: 900; letter-spacing: 0.1em; text-decoration: none">前往報名表單<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </div>
-<div style="flex: 1 1 300px; max-width: 400px; display: flex; flex-direction: column; background: #FFFFFF; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 60px rgba(10, 19, 66, 0.3)">
-<img src="tile-sphere.jpg" alt="" style="display: block; width: 100%; height: 130px; object-fit: cover">
-<div style="padding: 28px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+<div style="flex: 1 1 300px; max-width: 380px; display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 32px 28px; background: #FFFFFF; border-radius: 24px; text-align: center; box-shadow: 0 24px 60px rgba(10, 19, 66, 0.3)">
+<span style="font-size: 14px; font-weight: 700; letter-spacing: 0.16em; color: #0077C8">手機掃描報名</span>
 <img src="qr-register.png" alt="報名表單 QR Code" style="display: block; width: 200px; height: 200px">
-<span style="font-size: 18px; font-weight: 900; color: #0A1342; letter-spacing: 0.04em">手機掃描 QR Code 立即報名</span>
+<span style="font-size: 18px; font-weight: 900; color: #0A1342; letter-spacing: 0.04em">掃描 QR Code 立即報名</span>
 <a href="https://itricollege.surveycake.biz/s/6RV8O" target="_blank" rel="noopener" style="display: inline-block; padding: 12px 0; font-family: 'Outfit', sans-serif; font-size: 14px; color: #014CFF; word-break: break-all">itricollege.surveycake.biz/s/6RV8O</a>
-</div>
 </div>
 </div>
 </section>
 
-<!-- ========== 交通資訊 / 主辦單位 ========== -->
+<!-- ========== 活動地點 / 主辦單位 ========== -->
 <section id="venue" style="padding: clamp(64px, 8vw, 112px) 20px">
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px">
-<div style="flex: 1 1 440px; min-width: 0; display: flex; flex-wrap: wrap; gap: 24px; padding: clamp(24px, 3.5vw, 40px); background: #F2F8FE; border-radius: 24px">
-<div style="flex: 999 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
-<span style="font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.28em; color: #0077C8">LOCATION</span>
-<h2 style="margin: 0; font-size: clamp(26px, 2.6vw, 34px); font-weight: 900; letter-spacing: 0.04em; color: #0A1342">交通資訊</h2>
+<div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 14px; padding: clamp(24px, 3.5vw, 40px); background: #F2F8FE; border-radius: 24px">
+<span style="display: inline-flex; align-items: center; gap: 8px; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.28em; color: #0077C8"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1C12.7 8 16 11.3 23 12C16 12.7 12.7 16 12 23C11.3 16 8 12.7 1 12C8 11.3 11.3 8 12 1Z" fill="#00AAFF"></path></svg>LOCATION</span>
+<h2 style="margin: 0; font-size: clamp(26px, 2.6vw, 34px); font-weight: 900; letter-spacing: 0.04em; color: #0A1342">活動地點</h2>
 <span style="font-size: 22px; font-weight: 900; color: #0A1342; margin-top: 6px">台中市裕元花園酒店</span>
 <span style="font-size: 16px; line-height: 1.7; color: #4A5578">台中市西屯區台灣大道四段610號</span>
 <span style="font-size: 16px; line-height: 1.7; color: #4A5578">2026年12月7日（星期一）13:00–17:00</span>
-<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8F%B0%E4%B8%AD%E5%B8%82%E8%A3%95%E5%85%83%E8%8A%B1%E5%9C%92%E9%85%92%E5%BA%97" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px; margin-top: 8px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #014CFF; color: #014CFF; font-size: 15px; font-weight: 700; text-decoration: none">在 Google 地圖開啟<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px">
+<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8F%B0%E4%B8%AD%E5%B8%82%E8%A3%95%E5%85%83%E8%8A%B1%E5%9C%92%E9%85%92%E5%BA%97" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #014CFF; color: #014CFF; font-size: 15px; font-weight: 700; text-decoration: none">Google 地圖<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a>
+<a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%E6%A9%9F%E5%99%A8%E4%BA%BA%E8%88%87%E7%84%A1%E4%BA%BA%E8%BC%89%E5%85%B7%E7%94%A2%E6%A5%AD%E7%99%BC%E5%B1%95%E8%B6%A8%E5%8B%A2%E4%BA%A4%E6%B5%81%E6%9C%83&amp;dates=20261207T050000Z%2F20261207T090000Z&amp;location=%E5%8F%B0%E4%B8%AD%E5%B8%82%E8%A3%95%E5%85%83%E8%8A%B1%E5%9C%92%E9%85%92%E5%BA%97%EF%BC%88%E5%8F%B0%E4%B8%AD%E5%B8%82%E8%A5%BF%E5%B1%AF%E5%8D%80%E5%8F%B0%E7%81%A3%E5%A4%A7%E9%81%93%E5%9B%9B%E6%AE%B5610%E8%99%9F%EF%BC%89&amp;details=%E5%A0%B1%E5%90%8D%E8%A1%A8%E5%96%AE%EF%BC%9Ahttps%3A%2F%2Fitricollege.surveycake.biz%2Fs%2F6RV8O" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #014CFF; color: #014CFF; font-size: 15px; font-weight: 700; text-decoration: none">加入 Google 行事曆</a>
 </div>
-<img src="tile-quarter.jpg" alt="" style="flex: 0 0 auto; width: 150px; height: 135px; object-fit: cover; border-radius: 16px; display: block">
 </div>
 <div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 22px; padding: clamp(24px, 3.5vw, 40px); background: #FFFFFF; border: 1px solid #DCE8F5; border-radius: 24px">
 <div style="display: flex; flex-direction: column; gap: 14px">
-<span style="font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.28em; color: #0077C8">ORGANIZERS</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.28em; color: #0077C8"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1C12.7 8 16 11.3 23 12C16 12.7 12.7 16 12 23C11.3 16 8 12.7 1 12C8 11.3 11.3 8 12 1Z" fill="#00AAFF"></path></svg>ORGANIZERS</span>
 <h2 style="margin: 0; font-size: clamp(26px, 2.6vw, 34px); font-weight: 900; letter-spacing: 0.04em; color: #0A1342">主辦與受邀單位</h2>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
@@ -399,21 +432,29 @@ a:focus-visible{outline:3px solid #00AAFF;outline-offset:3px}
 </section>
 
 <!-- ========== 頁尾 ========== -->
-<footer style="background: #EAF6FE; border-top: 1px solid #DCE8F5; padding: 48px 20px">
+<footer class="page-end" style="background: #EAF6FE; border-top: 1px solid #DCE8F5; padding: 48px 20px">
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 28px 48px">
 <div style="flex: 0 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
 <img src="logo.png" alt="技術落地 產業共創｜法人技術巡展" style="display: block; width: 100%; height: auto">
 <span style="font-size: 14px; line-height: 1.7; color: #4A5578">機器人與無人載具產業發展趨勢交流會<br>議程及講者安排以主辦單位最終公告為準。</span>
 </div>
-<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-direction: column; gap: 6px">
 <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.12em; color: #0077C8">活動洽詢</span>
 <span style="font-size: 15px; line-height: 1.7; color: #0A1342">張小姐｜安侯建業聯合會計師事務所</span>
 <a href="tel:+886281016666,23658" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 1.7; color: #014CFF">電話：02-8101-6666 #23658</a>
 <a href="mailto:ollychang@kpmg.com.tw" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 1.7; color: #014CFF">Email：ollychang@kpmg.com.tw</a>
-<a class="btn" href="https://itricollege.surveycake.biz/s/6RV8O" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 22px; margin-top: 6px; border-radius: 999px; background: #014CFF; color: #FFFFFF; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-decoration: none">立即報名</a>
 </div>
 </div>
 </footer>
+
+<!-- ========== 手機版底部報名列 ========== -->
+<div class="mobile-bar" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; align-items: center; gap: 12px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: rgba(255, 255, 255, 0.97); border-top: 1px solid #DCE8F5; box-shadow: 0 -10px 28px rgba(10, 19, 66, 0.1)">
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; line-height: 1.4">
+<span style="font-size: 15px; font-weight: 700; color: #0A1342">免費參加・每家限 2 名</span>
+<span style="font-size: 14px; color: #4A5578">12/2（三）報名截止</span>
+</div>
+<a class="btn" href="https://itricollege.surveycake.biz/s/6RV8O" target="_blank" rel="noopener" style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #014CFF; color: #FFFFFF; font-size: 16px; font-weight: 700; letter-spacing: 0.08em; text-decoration: none">立即報名</a>
+</div>
 
 </div>
 </body>
