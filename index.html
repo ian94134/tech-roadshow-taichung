@@ -26,7 +26,9 @@ a{color:#014CFF}a:hover{color:#0A1342}
 a:focus-visible{outline:3px solid #00AAFF;outline-offset:3px}
 .navlink:hover{text-decoration:underline;text-underline-offset:6px}
 .mobile-bar{display:none}
+.nowrap-md{white-space:nowrap}
 @media (max-width: 767px){
+.nowrap-md{white-space:normal}
 .site-header{position:static !important}
 .nav-links{flex-wrap:nowrap !important;overflow-x:auto;width:100%;justify-content:space-between;gap:4px !important;scrollbar-width:none}
 .navlink{font-size:14px !important}
@@ -188,9 +190,9 @@ section[id]{scroll-margin-top:12px}
 <span style="display: inline-block; padding: 4px 10px; border-radius: 999px; background: #EEF1F7; color: #4A5578; font-size: 14px; font-weight: 700; letter-spacing: 0.04em">開場</span>
 <span style="font-size: 17px; font-weight: 500; line-height: 1.5; color: #0A1342">開場與致詞</span>
 </div>
-<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 4px; font-size: 15px; line-height: 1.6; color: #4A5578">
-<span>社團法人台灣智慧自動化與機器人協會 長官</span>
-<span>KPMG安侯建業聯合會計師事務所 長官</span>
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 4px; font-size: 15px; line-height: 1.6; color: #4A5578">
+<span class="nowrap-md">社團法人台灣智慧自動化與機器人協會 長官</span>
+<span class="nowrap-md">KPMG安侯建業聯合會計師事務所 長官</span>
 </div>
 </div>
 
